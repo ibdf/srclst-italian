@@ -1,12 +1,51 @@
 {
-  "categories": [
-    "cat1",
-    "cat2",
-    "cat3"
-  ],
-  "tags": [
-    "tag1",
-    "tag2",
-    "tag3"
-  ]
+  "filters": {
+    "formats": {
+      "label": "Formats",
+      "items": [
+        "Listening",
+        "Reading",
+        "Watching",
+        "Writing"
+      ]
+    },
+    "mediaTypes": {
+      "label": "Media Types",
+      "items": [
+        "Postcasts",
+        "Books",
+        "Videos",
+        "Websites",
+        "Apps",
+        "Music"
+      ]
+    },
+    "purpose": {
+      "label": "Purpose",
+      "items": [
+        "Entertainment",
+        "Educational"
+      ]
+    },
+    "pricing": {
+      "label": "Pricing",
+      "items": [
+        "Free",
+        "Freemium",
+        "Free Trial",
+        "Paid",
+        "Subscription"
+      ]
+    },
+    "tags": {
+      "label": "Tags",
+      "items": [
+        "Youtube",
+        "Movie",
+        "Playlist",
+        "TV Show",
+        "Course"
+      ]
+    }
+  }
 }
