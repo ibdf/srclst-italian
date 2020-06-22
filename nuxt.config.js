@@ -1,7 +1,7 @@
 
 export default {
   mode: 'spa',
-  buildDir: 'docs',
+  buildDir: 'dist',
   /*
   ** Headers of the page
   */
