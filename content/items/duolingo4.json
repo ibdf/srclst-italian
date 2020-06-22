@@ -1,9 +1,0 @@
-
-{
-  "name": "Duolingo4",
-  "src": "http://google.com1",
-  "icon": "/src-icons/duolingo.png",
-  "desc": "Duolingo is an American platform that includes a language-learning website and mobile app, as well as a digital language-proficiency assessment exam.",
-  "filter_formats": ["Listening", "Video"],
-  "filter_mediaTypes": ["Apps"]
-}
