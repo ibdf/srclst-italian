@@ -5,7 +5,7 @@
   "icon": "/src-icons/yt.png",
   "desc": "Youtuber: Breaking Italy è uno show online dal lunedì al giovedì nel quale Alessandro \"Shy\" Masala presenta e commenta le notizie più interessanti della giornata, presentandole come stimolo allo sviluppo di un pensiero critico.",
   "filter_formats": ["Watching", "Listening"],
-  "filter_mediaTypes": ["Video"],
+  "filter_mediaTypes": ["Videos"],
   "filter_purpose": ["Etertainment"],
   "filter_pricing": ["Free"],
   "filter_tags": ["Youtube"]

@@ -5,7 +5,7 @@
   "icon": "/src-icons/yt.png",
   "desc": "Youtuber: video lessons, vlogs and more, all in Italian! ",
   "filter_formats": ["Watching", "Listening"],
-  "filter_mediaTypes": ["Video"],
+  "filter_mediaTypes": ["Videos"],
   "filter_purpose": ["Entertainment", "Educational"],
   "filter_pricing": ["Free"],
   "filter_tags": ["Youtube"]
