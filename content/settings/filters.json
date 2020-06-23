@@ -6,13 +6,14 @@
         "Listening",
         "Reading",
         "Watching",
-        "Writing"
+        "Writing",
+        "Speaking"
       ]
     },
     "mediaTypes": {
       "label": "Media Types",
       "items": [
-        "Postcasts",
+        "Podcasts",
         "Books",
         "Videos",
         "Websites",
@@ -34,7 +35,9 @@
         "Freemium",
         "Free Trial",
         "Paid",
-        "Subscription"
+        "Subscription",
+        "A la carte",
+        "Patreon"
       ]
     },
     "tags": {
@@ -44,7 +47,9 @@
         "Movie",
         "Playlist",
         "TV Show",
-        "Course"
+        "Course",
+        "iOs",
+        "Android"
       ]
     }
   }

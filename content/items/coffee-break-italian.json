@@ -1,0 +1,12 @@
+
+{
+  "name": "Coffee Break Italian",
+  "src": "https://radiolingua.com/coffeebreakitalian/",
+  "icon": "/src-icons/coffee-break-italian.png",
+  "desc": "Listen to our free podcasts and learn or improve your Italian on the go, where and when it suits you.",
+  "filter_formats": ["Listening", "Reading"],
+  "filter_mediaTypes": ["Podcasts", "Websites"],
+  "filter_purpose": ["Educational"],
+  "filter_pricing": ["Free", "Freemium"],
+  "filter_tags": ["Course"]
+}

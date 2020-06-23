@@ -1,0 +1,12 @@
+
+{
+  "name": "Yotobi",
+  "src": "https://www.youtube.com/channel/UCIPsK5xspHC3-ZFNPTx2X_w",
+  "icon": "/src-icons/yt.png",
+  "desc": "Youtuber",
+  "filter_formats": ["Watching", "Listening"],
+  "filter_mediaTypes": ["Video"],
+  "filter_purpose": ["Entertainment"],
+  "filter_pricing": ["Free"],
+  "filter_tags": ["Youtube"]
+}

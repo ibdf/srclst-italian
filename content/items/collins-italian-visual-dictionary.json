@@ -1,0 +1,11 @@
+
+{
+  "name": "Collins Italian Visual Dictionary",
+  "src": "https://collins.co.uk/products/9780008290344",
+  "icon": "/src-icons/collins-ivd.png",
+  "desc": "A photo guide to everyday words and phrases in Italian",
+  "filter_formats": ["Reading"],
+  "filter_mediaTypes": ["Books"],
+  "filter_purpose": ["Educational"],
+  "filter_pricing": ["Paid"]
+}

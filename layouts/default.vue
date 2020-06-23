@@ -41,7 +41,6 @@ export default {
 <style lang="scss">
   #main {
     padding-top: 1rem;
-    margin-top: 42px;
     padding-bottom: 60px;
   }
 </style>

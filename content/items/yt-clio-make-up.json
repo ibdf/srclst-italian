@@ -1,0 +1,12 @@
+
+{
+  "name": "ClioMakeUp",
+  "src": "https://www.youtube.com/user/ClioMakeUp",
+  "icon": "/src-icons/yt.png",
+  "desc": "Youtuber",
+  "filter_formats": ["Watching", "Listening"],
+  "filter_mediaTypes": ["Video"],
+  "filter_purpose": ["Entertainment"],
+  "filter_pricing": ["Free"],
+  "filter_tags": ["Youtube"]
+}

@@ -61,12 +61,9 @@ export default {
   computed: {
     showMobileFilters () {
       if (!this.$store.state.mobileBreaks.includes(this.$mq)) {
-        console.log(this.$mq);
         return true;
       }
-      console.log('here');
       return this.$store.state.showMobileFilters;
-
     },
   },
   methods: {
@@ -99,18 +96,16 @@ export default {
 </script>
 <style lang="scss" scoped>
   #filters-wrap {
-    position: absolute;
     background-color: #fff;
-    overflow: scroll;
-    height: calc(100vh - 60px);
-    z-index: 999;
     @media only screen and (max-width: 1023px) {
+      overflow: scroll;
       width: 100%;
       height: 100%;
       position: fixed;
       top: 40px;
       left: 0;
       padding: 1rem 2rem;
+      z-index: 999;
     }
     @media only screen and (max-width: 768px) {
       padding: 0.5rem 1rem;

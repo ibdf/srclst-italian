@@ -1,0 +1,12 @@
+
+{
+  "name": "Un Italiano Vero",
+  "src": "https://www.youtube.com/channel/UCLh4Z6aVuEMWEqVyLVcoN4w",
+  "icon": "/src-icons/yt.png",
+  "desc": "Youtuber: teaches Italian",
+  "filter_formats": ["Watching", "Listening"],
+  "filter_mediaTypes": ["Video"],
+  "filter_purpose": ["Educational"],
+  "filter_pricing": ["Free"],
+  "filter_tags": ["Youtube"]
+}

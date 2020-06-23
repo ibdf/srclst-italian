@@ -1,0 +1,12 @@
+
+{
+  "name": "iTalki",
+  "src": "https://www.italki.com",
+  "icon": "/src-icons/iTalki.png",
+  "desc": "Choose from over 10,000 teachers for 1-on-1 lessons based on your goals and interests.",
+  "filter_formats": ["Listening", "Speaking"],
+  "filter_mediaTypes": ["Apps", "Websites"],
+  "filter_purpose": ["Educational"],
+  "filter_pricing": ["Free Trial", "A la carte"],
+  "filter_tags": ["iOs", "Android"]
+}

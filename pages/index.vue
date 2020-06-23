@@ -8,25 +8,29 @@
         />
       </div>
       <div class="column is-auto">
-        <div
+        <masonry
           v-if="items.length > 0"
-          class="columns is-multiline"
+          :cols="{ default: 3, 900: 2, 700: 1 }"
+          :gutter="{ default: '1rem', 768: 15, 600: 10 }"
         >
           <div
             v-for="item in items"
             :key="item.src"
-            class="column is-half-tablet is-full-mobile is-one-third-desktop"
+            class="masonry-item"
           >
             <card :card-info="item" />
           </div>
-        </div>
+        </masonry>
       </div>
     </div>
   </div>
 </template>
 <script>
+import Vue from 'vue';
 import Card from '@/components/card';
 import Filters from '@/components/filters';
+import VueMasonry from 'vue-masonry-css';
+Vue.use(VueMasonry);
 
 export default {
   components: {
@@ -51,6 +55,7 @@ export default {
   data () {
     return {
       items: [],
+      macyInstance: null,
     };
   },
   created () {
@@ -71,8 +76,6 @@ export default {
         where[`filter_${filter}`] = { $contains: filters[filter] };
       });
 
-      console.log(where);
-
       let request = await this.$content("items")
         .only([ "name", "src", "desc", "icon" ])
         .where(where)
@@ -84,6 +87,10 @@ export default {
 };
 </script>
 <style lang="scss">
+  body {
+    padding-top: 42px;
+    -webkit-column-break-inside:avoid;
+  }
   @media screen and (max-width: 1023px) {
     .filters-column {
       width: 0;
@@ -91,4 +98,9 @@ export default {
       padding: 0;
     }
   }
+
+  .masonry-item {
+    margin-bottom: 1rem;
+  }
+
 </style>

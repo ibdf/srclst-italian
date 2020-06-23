@@ -1,0 +1,12 @@
+
+{
+  "name": "Podcast Italiano",
+  "src": "https://podcastitaliano.com/",
+  "icon": "/src-icons/podcast-italiano.png",
+  "desc": "The podcast and YouTube channel to learn Italian through interesting and authentic content.",
+  "filter_formats": ["Listening"],
+  "filter_mediaTypes": ["Podcasts", "Websites"],
+  "filter_purpose": ["Educational"],
+  "filter_pricing": ["Free", "Patreon"],
+  "filter_tags": ["Course"]
+}
