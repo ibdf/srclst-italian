@@ -43,16 +43,27 @@
         </ul>
       </li>
     </ul>
-    <section class="section">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <button
-            class="button is-small is-danger"
-            type="button"
-            @click="resetAll"
+    <section
+      class="section"
+    >
+      <div
+        class="columns"
+      >
+        <div
+          class="column"
+        >
+          <div
+            class="buttons"
+            :class="isMobileOnly ? 'is-centered' : ''"
           >
-            Clear all filters
-          </button>
+            <button
+              class="button is-small is-danger"
+              type="button"
+              @click="resetAll"
+            >
+              Clear all filters
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -76,6 +87,14 @@ export default {
     };
   },
   computed: {
+    isMobileOnly () {
+      console.log(this.$store.state.mobileBreaks);
+      console.log(this.$mq);
+      if (this.$store.state.mobileBreaks.includes(this.$mq)) {
+        return true;
+      }
+      return false;
+    },
     showMobileFilters () {
       if (!this.$store.state.mobileBreaks.includes(this.$mq)) {
         return true;

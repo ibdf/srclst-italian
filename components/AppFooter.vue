@@ -6,19 +6,19 @@
     <div class="level">
       <div class="level-item has-text-centered">
         <a
-          ref="mobile-filter"
           class="mobile-filter"
+          :class="isActive ? 'is-active' : ''"
           href="#"
           @click="toggleFilters"
         >
-          <div class="icon">
+          <div class="icon is-inline-block">
             <i class="fas fa-sliders-h" />
             <div class="count-badge">{{ itemsCount }}</div>
           </div>
           <div
             class="icon-label"
           >
-            Filters
+            {{ !isActive ? 'Filters' : 'Close' }}
           </div>
         </a>
       </div>
@@ -27,6 +27,11 @@
 </template>
 <script>
 export default {
+  data () {
+    return {
+      isActive: false,
+    };
+  },
   computed: {
     itemsCount () {
       return this.$store.state.itemsCount;
@@ -34,7 +39,8 @@ export default {
   },
   methods: {
     toggleFilters () {
-      this.$refs['mobile-filter'].classList.toggle('is-active');
+      // this.$refs['mobile-filter'].classList.toggle('is-active');
+      this.isActive = !this.isActive;
       this.$store.commit('showMobileFilters');
     },
   },
@@ -51,7 +57,7 @@ export default {
     padding: 0.10rem;
     .mobile-filter {
       &.is-active {
-        color: #ccc !important;
+        color: #444 !important;
       }
     }
     .icon {
