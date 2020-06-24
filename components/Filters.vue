@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="showMobileFilters"
+    v-show="showMobileFilters"
     id="filters-wrap"
   >
     <ul id="filters">
@@ -127,6 +127,9 @@ export default {
       li {
         border-bottom: 0;
         display: inline-block;
+        &:not(last-of-type) {
+          margin-right: .2rem;
+        }
       }
     }
     @media only screen and (max-width: 768px) {
