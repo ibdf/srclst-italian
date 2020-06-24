@@ -47,11 +47,11 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <button
-            class="button"
+            class="button is-small is-danger"
             type="button"
             @click="resetAll"
           >
-            Clear all
+            Clear all filters
           </button>
         </div>
       </div>
@@ -125,7 +125,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   #filters-wrap {
-    background-color: #fff;
+    background-color: rgba(#ffffff, 0.95);
     @media only screen and (max-width: 1023px) {
       overflow: scroll;
       width: 100%;

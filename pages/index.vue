@@ -82,6 +82,7 @@ export default {
         .fetch();
 
       this.items = request;
+      this.$store.commit('itemsCount', this.items.length);
     },
   },
 };
@@ -101,6 +102,24 @@ export default {
 
   .masonry-item {
     margin-bottom: 1rem;
+  }
+  .icon {
+    position: relative;
+  }
+  .count-badge {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    background-color: red;
+    font-weight: bold;
+    color: #fff;
+    font-size: .5rem;
+    border-radius: 50%;
+    z-index: 9999;
+    display: block;
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
   }
 
 </style>

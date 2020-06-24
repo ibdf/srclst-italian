@@ -6,13 +6,18 @@
     <div class="level">
       <div class="level-item has-text-centered">
         <a
+          class="has-badge-rounded"
+          data-badge="8"
           href="#"
           @click="toggleFilters"
         >
           <div class="icon">
             <i class="fas fa-sliders-h" />
+            <div class="count-badge">{{ itemsCount }}</div>
           </div>
-          <div class="icon-label">
+          <div
+            class="icon-label"
+          >
             Filters
           </div>
         </a>
@@ -22,6 +27,11 @@
 </template>
 <script>
 export default {
+  computed: {
+    itemsCount () {
+      return this.$store.state.itemsCount;
+    },
+  },
   methods: {
     toggleFilters () {
       this.$store.commit('showMobileFilters');
