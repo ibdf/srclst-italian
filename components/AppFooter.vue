@@ -6,8 +6,8 @@
     <div class="level">
       <div class="level-item has-text-centered">
         <a
-          class="has-badge-rounded"
-          data-badge="8"
+          ref="mobile-filter"
+          class="mobile-filter"
           href="#"
           @click="toggleFilters"
         >
@@ -34,6 +34,7 @@ export default {
   },
   methods: {
     toggleFilters () {
+      this.$refs['mobile-filter'].classList.toggle('is-active');
       this.$store.commit('showMobileFilters');
     },
   },
@@ -44,10 +45,15 @@ export default {
     width: 100%;
     position: fixed;
     bottom: 0;
-    height: 40px;
+    height: 60px;
     background-color: #fff;
     z-index: 999;
-    padding: 0.10rem 0;
+    padding: 0.10rem;
+    .mobile-filter {
+      &.is-active {
+        color: #ccc !important;
+      }
+    }
     .icon {
       display: block;
     }

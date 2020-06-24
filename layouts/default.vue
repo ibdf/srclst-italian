@@ -43,4 +43,10 @@ export default {
     padding-top: 1rem;
     padding-bottom: 60px;
   }
+  @media screen and (max-width: 600px) {
+    .container {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
 </style>

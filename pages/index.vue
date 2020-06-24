@@ -60,8 +60,12 @@ export default {
   },
   created () {
     this.filters.filters = this.sortFilters(this.filters.filters);
+    this.updateFiltersCount();
   },
   methods: {
+    updateFiltersCount () {
+      this.$store.commit('itemsCount', this.items.length);
+    },
     sortFilters (filters) {
       for (let filterKey in filters) {
         filters[filterKey]['items'] = filters[filterKey]['items'].sort((a, b) => a < b ? -1 : 1);
@@ -82,7 +86,7 @@ export default {
         .fetch();
 
       this.items = request;
-      this.$store.commit('itemsCount', this.items.length);
+      this.updateFiltersCount();
     },
   },
 };
