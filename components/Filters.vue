@@ -11,7 +11,10 @@
         <h3 class="is-size-5">
           {{ filterItems.label }}
         </h3>
-        <ul class="filter-items">
+        <ul
+          ref="filter-items"
+          class="filter-items"
+        >
           <li
             v-for="(filterItem, itemIndex) in filterItems.items"
             :key="filterItem"
@@ -40,9 +43,23 @@
         </ul>
       </li>
     </ul>
+    <section class="section">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <button
+            class="button"
+            type="button"
+            @click="resetAll"
+          >
+            Clear all
+          </button>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 <script>
+import Vue from 'vue';
 export default {
   name: "Filters",
   props: {
@@ -67,6 +84,18 @@ export default {
     },
   },
   methods: {
+    resetAll () {
+      Vue.set(this, 'activeFilters', {});
+      this.resetActiveLinks();
+      this.updateQuery();
+    },
+    resetActiveLinks () {
+      this.$refs['filter-items'].forEach(filter => filter.querySelectorAll('li a.is-active-filter').
+        forEach(link => link.classList.remove('is-active-filter')));
+    },
+    updateQuery () {
+      this.$emit('activeFilters', this.activeFilters);
+    },
     linkIsActive (key, value) {
       return this.activeFilters[key] && this.activeFilters[key].includes(value) ? true : false;
     },
@@ -89,7 +118,7 @@ export default {
         }
       });
 
-      this.$emit('activeFilters', this.activeFilters);
+      this.updateQuery();
     },
   },
 };
