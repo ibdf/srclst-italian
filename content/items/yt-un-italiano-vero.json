@@ -5,8 +5,8 @@
   "icon": "/src-icons/yt.png",
   "desc": "Youtuber: teaches Italian",
   "filter_formats": ["Watching", "Listening"],
-  "filter_mediaTypes": ["Videos"],
-  "filter_purpose": ["Educational"],
+  "filter_medium": ["Videos"],
+  "filter_purpose": ["Teaching"],
   "filter_pricing": ["Free"],
   "filter_tags": ["Youtube"]
 }

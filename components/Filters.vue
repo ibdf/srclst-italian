@@ -5,38 +5,38 @@
   >
     <ul id="filters">
       <li
-        v-for="(filterItems, filterKey) in filters"
-        :key="filterKey"
+        v-for="(cat, catKey) in categories"
+        :key="catKey"
       >
         <h3 class="is-size-5">
-          {{ filterItems.label }}
+          {{ cat }}
         </h3>
         <ul
           ref="filter-items"
           class="filter-items"
         >
           <li
-            v-for="(filterItem, itemIndex) in filterItems.items"
-            :key="filterItem"
+            v-for="(filterCount, filter, filterIndex) in filters[`filter_${catKey}`]"
+            :key="filter"
             class="filter-item"
-            :class="filterKey === 'tags' ? 'is-inline-block' : ''"
+            :class="catKey === 'tags' ? 'is-inline-block' : ''"
           >
-            <template v-if="filterKey === 'tags' ? 'tag' : ''">
+            <template v-if="catKey === 'tags' ? 'tag' : ''">
               <span class="tag">
                 <a
-                  :ref="`${filterKey}-${itemIndex}`"
-                  @click.prevent="filter(filterKey, filterItem, itemIndex)"
+                  :ref="`${catKey}-${filterIndex}`"
+                  @click.prevent="filterItems(catKey, filter, filterIndex)"
                 >
-                  {{ filterItem }}
+                  {{ filter }} ({{ filterCount }})
                 </a>
               </span>&nbsp;
             </template>
             <template v-else>
               <a
-                :ref="`${filterKey}-${itemIndex}`"
-                @click.prevent="filter(filterKey, filterItem, itemIndex)"
+                :ref="`${catKey}-${filterIndex}`"
+                @click.prevent="filterItems(catKey, filter, filterIndex)"
               >
-                {{ filterItem }}
+                {{ filter }} ({{ filterCount }})
               </a>
             </template>
           </li>
@@ -80,6 +80,12 @@ export default {
         return {};
       },
     },
+    categories: {
+      type: Object,
+      default () {
+        return {};
+      },
+    },
   },
   data () {
     return {
@@ -88,8 +94,6 @@ export default {
   },
   computed: {
     isMobileOnly () {
-      console.log(this.$store.state.mobileBreaks);
-      console.log(this.$mq);
       if (this.$store.state.mobileBreaks.includes(this.$mq)) {
         return true;
       }
@@ -118,7 +122,7 @@ export default {
     linkIsActive (key, value) {
       return this.activeFilters[key] && this.activeFilters[key].includes(value) ? true : false;
     },
-    filter (key, value, index) {
+    filterItems (key, value, index) {
       if (!this.activeFilters.hasOwnProperty(key)) {
         this.activeFilters[key] = [];
       }

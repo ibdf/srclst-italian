@@ -5,7 +5,7 @@
   "icon": "/src-icons/collins-ivd.png",
   "desc": "A photo guide to everyday words and phrases in Italian",
   "filter_formats": ["Reading"],
-  "filter_mediaTypes": ["Books"],
-  "filter_purpose": ["Educational"],
+  "filter_medium": ["Books"],
+  "filter_purpose": ["Teaching"],
   "filter_pricing": ["Paid"]
 }

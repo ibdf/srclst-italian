@@ -3,7 +3,8 @@
     <div class="columns">
       <div class="column is-2-desktop filters-column is-relative">
         <filters
-          :filters="filters.filters"
+          :filters="filters"
+          :categories="categories"
           @activeFilters="filterContent"
         />
       </div>
@@ -41,14 +42,32 @@ export default {
 
     let promises = [];
 
-    promises.push($content('settings/filters').fetch());
+    promises.push($content('settings').fetch());
     promises.push($content("items").sortBy("name").fetch());
 
     let values = await Promise.all(promises);
 
+    let categories = values[0].categories;
+    let items = values[1];
+    let filters = {};
+
+    items.forEach(item => {
+      Object.keys(item).forEach(itemKey => {
+        if (itemKey.startsWith('filter_')) {
+          if (!filters[itemKey]) {
+            filters[itemKey] = {};
+          }
+          item[itemKey].forEach(itemFilter => {
+            !filters[itemKey][itemFilter] ? filters[itemKey][itemFilter] = 1 : filters[itemKey][itemFilter]++;
+          });
+        }
+      });
+    });
+
     return {
-      filters: values[0],
-      items: values[1],
+      filters,
+      items,
+      categories,
     };
 
   },
